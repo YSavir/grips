@@ -27,7 +27,7 @@ linkTo accepts parameters, allowing for dynamic paths.
 Parameters must be passed as 'params:[param name]'
 
 ```javascript
-{{{linkTo 'this.name' 'users/:user_id' params:user_id=this.id}}}
+{{{linkTo this.name 'users/:user_id' params:user_id=this.id}}}
 //=> <a href='/users/1'>YSavir</a>
 ```
 (implementation of base tag attributes coming)
