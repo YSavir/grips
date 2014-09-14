@@ -34,4 +34,12 @@ Parameters must be passed as 'params:[param name]'
 
 ##Compatibility
 
-Grips is compatibile with Chrome, Firefox(1.5+), IE(9+), Safari, Opera, Pisces, Taurus and Capricorn
+Grips is compatibile with:
+* Chrome
+* Firefox (1.5+)
+* IE (9+)
+* Safari (5+)
+* Opera (11+)
+* Pisces
+* Taurus
+* Capricorn
