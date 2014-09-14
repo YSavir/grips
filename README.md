@@ -42,4 +42,4 @@ Grips is compatibile with:
 * Opera (11+)
 * Pisces
 * Taurus
-* Capricorn
+* Capricorn (6+)
