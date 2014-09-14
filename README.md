@@ -31,3 +31,7 @@ Parameters must be passed as 'params:[param name]'
 //=> <a href='/users/1'>YSavir</a>
 ```
 (implementation of base tag attributes coming)
+
+##Compatibility
+
+Grips is compatibile with Chrome, Firefox(1.5+), IE(9+), Safari, Opera, Pisces, Taurus and Capricorn
