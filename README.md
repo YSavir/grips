@@ -7,22 +7,27 @@ A library of Handlebars helpers for generating HTML
 Add the grips.js file to your webpage. Be sure to add Handlebars first.
 
 ##Usage
-Use any of the following Handlebars expressions inside your Handlebars templates. You will need to use the 'triple-stach' ({{{ expression }}}) rather than the double-stack ({{ expression }})
+Use any of the following Handlebars expressions inside your Handlebars templates.
+You will need to use the 'triple-stash' ({{{ expression }}}) rather than the double-stack ({{ expression }}).
 
 ###Helpers
 
 ####linkTo
+```javascript
+{{{linkTo body path [params and attributes]}}}
+```
 Inserts an anchor tag in place of the expression.
 
 ```javascript
 {{{linkTo 'Home' '/'}}}
-// => <a href='/'>Home</a>
+//=> <a href='/'>Home</a>
 ```
 
-linkTo acceps parameters, allowing for dynamic paths
+linkTo accepts parameters, allowing for dynamic paths.
+Parameters must be passed as 'params:[param name]'
 
 ```javascript
-{{{linkTo 'this.name' 'users/:1' params1=this.id}}}
-// => <a href='/users/1'>YSavir</a>
+{{{linkTo 'this.name' 'users/:user_id' params:user_id=this.id}}}
+//=> <a href='/users/1'>YSavir</a>
 ```
 (implementation of base tag attributes coming)
