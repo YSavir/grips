@@ -10,7 +10,9 @@ Add the grips.js file to your webpage. Be sure to add Handlebars first.
 Use any of the following Handlebars expressions inside your Handlebars templates.
 
 ###General Syntax
+```javascript
 //{{{helperName requiredFields options(0+)}}}
+```
 You will need to use the 'triple-stash' ({{{ expression }}}) rather than the double-stash ({{ expression }}).
 
 ####Attributes
@@ -30,13 +32,11 @@ Paramters can be passed to the helper as part of the options as follows:
 
 ###Helpers
 
-###linkTo
+####linkTo
 Inserts an anchor tag in place of the expression.
 ```javascript
 {{{linkTo body path [params and/or attributes]}}}
-```
 
-```javascript
 {{{linkTo 'Home' '/'}}}
 //=> <a href='/'>Home</a>
 ```
