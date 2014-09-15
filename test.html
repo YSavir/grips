@@ -5,15 +5,17 @@
   <link rel="stylesheet" href="vendor/node_modules/mocha/mocha.css" />
 </head>
 <body>
-  <div id="mocha"></div>
-  <script src="vendor/jquery-1.11.0.js"></script>
-  <script src="vendor/node_modules/expect.js/index.js"></script>
+  <div id="mocha"><p><a href=".">Index</a></p></div>
+  <div id='messages'></div>
+  <div id='fixtures'></div>
   <script src="vendor/node_modules/mocha/mocha.js"></script>
+  <script src='vendor/node_modules/chai/chai.js'></script>
   <script src='vendor/handlebars.js'></script>
   <script src='vendor/handlebars_helpers.js'></script>
   <script src='templates/templates.js'></script>
   <script src='lib/grips.js'></script>
   <script>mocha.setup('bdd')</script>
+  <script src='test/link_to.js'></script>
   <script>
     mocha.checkLeaks();
     mocha.globals(['jQuery']);
