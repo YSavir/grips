@@ -11,7 +11,7 @@ Use any of the following Handlebars expressions inside your Handlebars templates
 
 ###General Syntax
 ```javascript
-//{{{helperName requiredFields options(0+)}}}
+{{{helperName requiredFields options(0+)}}}
 ```
 You will need to use the 'triple-stash' ({{{ expression }}}) rather than the double-stash ({{ expression }}).
 
