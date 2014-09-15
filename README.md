@@ -36,11 +36,19 @@ Paramters can be passed to the helper as part of the options as follows:
 Inserts an anchor tag in place of the expression.
 ```javascript
 {{{linkTo body path [params and/or attributes]}}}
+```
+Any parameters passed will be interpolated into the path string.
 
+```javascript
 {{{linkTo 'Home' '/'}}}
 //=> <a href='/'>Home</a>
-```
 
+{{{linkTo 'Home' '/' attr:class='link' attr:id='link-home' }}}
+//=> <a class='link' id='link-home' href='/'>Home</a>
+
+{{{linkTo this.name 'users/:user_id' params:user_id=this.id}}}
+//=> <a href='/users/1'>YSavir</a>
+```
 ##Compatibility
 
 Grips is compatibile with:
