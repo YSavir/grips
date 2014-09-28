@@ -1,2 +1,0 @@
-{{{#formFor this}}}
-{{{/formFor}}}
