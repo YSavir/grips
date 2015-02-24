@@ -8,7 +8,7 @@ describe('inputTag', function(){
   })
   describe('with optional attributes', function(){
     it('should create an input with attributes when given attributes', function(){
-      expect(Handlebars.templates['input_tag/attributes']().string).to.equal('<input class="test" id="input-test" name="name">')
+      expect(Handlebars.templates['input_tag/attributes']().string).to.equal('<input id="input-test" class="test" name="name">')
     })
   })
 })

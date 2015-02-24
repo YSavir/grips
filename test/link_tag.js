@@ -13,7 +13,7 @@ describe('linkTag', function(){
   });
   describe('with  attributes', function(){
     it('should return an anchor tags with id and class attributes', function(){
-      expect(Handlebars.templates['link_tag/attributes']().string).to.equal('<a class="test" id="linkToTest" href="/">Home</a>');
+      expect(Handlebars.templates['link_tag/attributes']().string).to.equal('<a id="linkToTest" class="test" href="/">Home</a>');
     });
   })
 });

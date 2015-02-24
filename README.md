@@ -46,7 +46,7 @@ Any parameters passed will be interpolated into the path string.
 {{{linkTo 'Home' '/' attr:class='link' attr:id='link-home' }}}
 //=> <a class='link' id='link-home' href='/'>Home</a>
 
-{{{linkTo this.name 'users/:user_id' params:user_id=this.id}}}
+{{{linkTo this.name 'users/:id' params:id=this.id}}}
 //=> <a href='/users/1'>YSavir</a>
 ```
 ##Compatibility
