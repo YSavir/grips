@@ -19,7 +19,7 @@ describe('formTag', function(){
     expect(testFunction).to.throw('form must be given an action')
   });
 
-  describe('with only required arguments', function(){
+  describe('with all required arguments', function(){
     it('should return a form field with an action and method', function(){
       var templateText = "{{#formTag this}}\n{{/formTag}}";
       var template = Handlebars.compile(templateText);
