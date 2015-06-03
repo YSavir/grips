@@ -1,1 +1,55 @@
-!function(){var a=Handlebars.template,e=Handlebars.templates=Handlebars.templates||{};e["form_tag/base"]=a(function(a,e,t,i,n){function r(){return"\n"}this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var s,l,g,h=this,p=t.helperMissing;return l=t.formTag||e&&e.formTag,g={hash:{},inverse:h.noop,fn:h.program(1,r,n),data:n},s=l?l.call(e,e,g):p.call(e,"formTag",e,g),s||0===s?s:""}),e["input_tag/attributes"]=a(function(a,e,t,i,n){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var r,s,l,g=t.helperMissing;return s=t.inputTag||e&&e.inputTag,l={hash:{"attr:class":"test","attr:id":"input-test"},data:n},r=s?s.call(e,"name",l):g.call(e,"inputTag","name",l),r||0===r?r:""}),e["input_tag/basic"]=a(function(a,e,t,i,n){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var r,s,l,g=t.helperMissing;return s=t.inputTag||e&&e.inputTag,l={hash:{},data:n},r=s?s.call(e,"name",l):g.call(e,"inputTag","name",l),r||0===r?r:""}),e["link_tag/attributes"]=a(function(a,e,t,i,n){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var r,s,l,g=t.helperMissing;return s=t.linkTag||e&&e.linkTag,l={hash:{"attr:class":"test","attr:id":"linkToTest"},data:n},r=s?s.call(e,"Home","/",l):g.call(e,"linkTag","Home","/",l),r||0===r?r:""}),e["link_tag/base"]=a(function(a,e,t,i,n){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var r,s,l,g=t.helperMissing;return s=t.linkTag||e&&e.linkTag,l={hash:{},data:n},r=s?s.call(e,"Home","/",l):g.call(e,"linkTag","Home","/",l),r||0===r?r:""}),e["link_tag/params"]=a(function(a,e,t,i,n){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,a.helpers),n=n||{};var r,s,l,g=t.helperMissing;return s=t.linkTag||e&&e.linkTag,l={hash:{"param:user_id":1},data:n},r=s?s.call(e,e&&e.name,"/users/:user_id",l):g.call(e,"linkTag",e&&e.name,"/users/:user_id",l),r||0===r?r:""})}();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['form_tag/base'] = template({"1":function(depth0,helpers,partials,data) {
+  return "";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.formTag || (depth0 && depth0.formTag) || helperMissing).call(depth0, depth0, {"name":"formTag","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['input_tag/attributes'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.inputTag || (depth0 && depth0.inputTag) || helperMissing).call(depth0, "name", {"name":"inputTag","hash":{
+    'attr:id': ("input-test"),
+    'attr:class': ("test")
+  },"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['input_tag/basic'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.inputTag || (depth0 && depth0.inputTag) || helperMissing).call(depth0, "name", {"name":"inputTag","hash":{},"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['link_tag/attributes'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.linkTag || (depth0 && depth0.linkTag) || helperMissing).call(depth0, "Home", "/", {"name":"linkTag","hash":{
+    'attr:id': ("linkToTest"),
+    'attr:class': ("test")
+  },"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['link_tag/base'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.linkTag || (depth0 && depth0.linkTag) || helperMissing).call(depth0, "Home", "/", {"name":"linkTag","hash":{},"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['link_tag/params'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing;
+  stack1 = ((helpers.linkTag || (depth0 && depth0.linkTag) || helperMissing).call(depth0, (depth0 != null ? depth0.name : depth0), "/users/:user_id", {"name":"linkTag","hash":{
+    'param:user_id': (1)
+  },"data":data}));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+templates['select_tag/base'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helper, functionType="function", helperMissing=helpers.helperMissing;
+  stack1 = ((helper = (helper = helpers.select || (depth0 != null ? depth0.select : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"select","hash":{},"data":data}) : helper));
+  if (stack1 != null) { return stack1; }
+  else { return ''; }
+  },"useData":true});
+})();
