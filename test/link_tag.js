@@ -1,14 +1,49 @@
 var expect = chai.expect;
 
 describe('linkTag', function(){
-  describe('base', function(){
-    it('should return an anchor tag with body an an href', function(){
+
+  describe('with missing requirements', function(){
+    it('should throw a missing tag text error', function(){
+      var templateText = "{{{linkTag}}}";
+      var template = Handlebars.compile(templateText);
+      var testFunction = function(){
+        return template();
+      }
+
+      expect(testFunction).to.throw('linkTo requires a body');
+    });
+    
+    it('should throw a missing href error', function(){
+      var templateText = "{{{linkTag 'Home'}}}";
+      var template = Handlebars.compile(templateText);
+      var testFunction = function(){
+        return template();
+      }
+
+      expect(testFunction).to.throw('linkTo requires an href');
+    });
+
+  });
+
+  describe('with required arguments', function(){
+    it('should return a functioning link tag', function(){
       var templateText = "{{{linkTag 'Home' '/'}}}";
       var template = Handlebars.compile(templateText);
       var resultText = template().string;
 
       expect(resultText).to.equal('<a href="/">Home</a>');
     });
+
+    describe('with  attributes', function(){  
+      it('should return an anchor tag with the given id and class attributes', function(){
+        var templateText = "{{{linkTag 'Home' '/' attr:class='test' attr:id='linkToTest' }}}";
+        var template = Handlebars.compile(templateText);
+        var resultText = template().string;
+
+        expect(resultText).to.equal('<a id="linkToTest" class="test" href="/">Home</a>');
+      });
+    })
+
   });
 
   describe('with params', function(){
@@ -21,14 +56,5 @@ describe('linkTag', function(){
     });
   });
 
-  describe('with  attributes', function(){
-    it('should return an anchor tags with id and class attributes', function(){
-      var templateText = "{{{linkTag 'Home' '/' attr:class='test' attr:id='linkToTest' }}}";
-      var template = Handlebars.compile(templateText);
-      var resultText = template().string;
-
-      expect(resultText).to.equal('<a id="linkToTest" class="test" href="/">Home</a>');
-    });
-  })
-});
+  });
 
