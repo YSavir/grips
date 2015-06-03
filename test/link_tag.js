@@ -34,9 +34,9 @@ describe('linkTag', function(){
       expect(resultText).to.equal('<a href="/">Home</a>');
     });
 
-    describe('with  attributes', function(){  
+    describe('and with  attributes', function(){  
       it('should return an anchor tag with the given id and class attributes', function(){
-        var templateText = "{{{linkTag 'Home' '/' attr:class='test' attr:id='linkToTest' }}}";
+        var templateText = "{{{linkTag 'Home' '/' class='test' id='linkToTest' }}}";
         var template = Handlebars.compile(templateText);
         var resultText = template().string;
 
@@ -44,17 +44,15 @@ describe('linkTag', function(){
       });
     })
 
-  });
+    describe('and with params', function(){
+      it('should return an anchor tag with the params interpolated into the path', function(){
+        var templateText = "{{{linkTag this.name '/users/:id'}}}";
+        var template = Handlebars.compile(templateText);
+        var resultText = template({name: 'Yaniv', id: 1}).string;
 
-  describe('with params', function(){
-    it('should return an anchor tag with the params interpolated into the path', function(){
-      var templateText = "{{{linkTag this.name '/users/:user_id' param:user_id=1}}}";
-      var template = Handlebars.compile(templateText);
-      var resultText = template({name: 'Yaniv', id: 1}).string;
-
-      expect(resultText).to.equal('<a href="/users/1">Yaniv</a>');
+        expect(resultText).to.equal('<a href="/users/1">Yaniv</a>');
+      });
     });
   });
-
-  });
+});
 
