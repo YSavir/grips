@@ -46,7 +46,7 @@ describe('linkTag', function(){
 
     describe('and with params', function(){
       it('should return an anchor tag with the params interpolated into the path', function(){
-        var templateText = "{{{linkTag this.name '/users/:id'}}}";
+        var templateText = "{{{linkTag name '/users/:id'}}}";
         var template = Handlebars.compile(templateText);
         var resultText = template({name: 'Yaniv', id: 1}).string;
 

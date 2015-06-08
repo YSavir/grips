@@ -1,55 +1,76 @@
-#Grips
+# Grips
 
-##Description
+## Description
 A library of Handlebars helpers for generating HTML, inspired by ActionView helpers
 
-##Installation
+## Installation
 Add the grips.js file to your webpage. Be sure to add Handlebars first.
 
-##Usage
+## Usage
 Use any of the following Handlebars expressions inside your Handlebars templates.
 
-###General Syntax
+### General Syntax
 ```javascript
-{{{helperName requiredFields options(0+)}}}
+{{{ helperName requiredFields attributes }}}
 ```
-You will need to use the 'triple-stash' ({{{ expression }}}) rather than the double-stash ({{ expression }}).
+You will need to use the 'triple-stash' (`{{{ expression }}}`) rather than the
+double-stash (`{{ expression }}`).
 
-####Attributes
-Attributes can be passed to the helper as part the options as follows:
+#### Attributes
+Attributes can be passed to the helper as follows:
+
 ```javascript
-{{{linkTo 'Home' '/' attr:class='link' attr:id='link-home' }}}
+{{{linkTo 'Home' '/' class='link' id='link-home' }}}
 //=> <a class='link' id='link-home' href='/'>Home</a>
 ```
 
-####Parameters
-Some helpers accept parameters, allowing for values to be dynamically used in the creation process.
-Paramters can be passed to the helper as part of the options as follows:
+#### Parameters
+Some helpers accept parameters, allowing for values to be dynamically used in the templating process. See individual helpers for more information on how it uses helpers (if it uses any). Paramater values are taken from the current context (the object passed to the template compiler).
+
 ```javascript
-{{{linkTo this.name 'users/:user_id' params:user_id=this.id}}}
+//context: {name: 'YSavir', id: 1}
+{{{ linkTo name 'users/:id' }}}
 //=> <a href='/users/1'>YSavir</a>
 ```
 
-###Helpers
+### Helpers
 
-####linkTo
+#### linkTo
 Inserts an anchor tag in place of the expression.
 ```javascript
-{{{linkTo body path [params and/or attributes]}}}
+{{{linkTo body path [attributes]}}}
 ```
 Any parameters passed will be interpolated into the path string.
 
 ```javascript
+// Context: {name: 'YSavir', id: 1}
+
 {{{linkTo 'Home' '/'}}}
 //=> <a href='/'>Home</a>
 
-{{{linkTo 'Home' '/' attr:class='link' attr:id='link-home' }}}
+{{{linkTo 'Home' '/' class='link' id='link-home' }}}
 //=> <a class='link' id='link-home' href='/'>Home</a>
 
-{{{linkTo this.name 'users/:id' params:id=this.id}}}
+{{{linkTo name 'users/:id' }}}
 //=> <a href='/users/1'>YSavir</a>
 ```
-##Compatibility
+
+#### textFieldTag
+Inserts a text input tag. Parameters can be inserted into the `placeholder` and `value` attributes.
+
+```javascript
+//context {username: 'Joe'}
+
+{{{ textFieldTag }}}
+//=> <input type="text">
+
+{{{ textFieldTag name='someInput' autocomplete='on' }}}
+//=> <input type="text" name="someInput" autocomplete="on">
+
+{{{ textFieldTag value=":username" placeholder="Username... Currently :username" }}}
+//=> <input type="text" value="Joe" placeholder="Username... Currently Joe">
+```
+## Compatibility
 
 Grips is compatibile with:
 * Chrome
