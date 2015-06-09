@@ -10,7 +10,7 @@ describe('linkTag', function(){
         return template();
       }
 
-      expect(testFunction).to.throw('linkTo requires a body');
+      expect(testFunction).to.throw('link text must be a string');
     });
     
     it('should throw a missing href error', function(){
@@ -20,7 +20,7 @@ describe('linkTag', function(){
         return template();
       }
 
-      expect(testFunction).to.throw('linkTo requires an href');
+      expect(testFunction).to.throw('href must be a string');
     });
 
   });
