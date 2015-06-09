@@ -25,12 +25,14 @@ Attributes can be passed to the helper as follows:
 ```
 
 #### Parameters
-Some helpers accept parameters, allowing for values to be dynamically used in the templating process. See individual helpers for more information on how it uses helpers (if it uses any). Paramater values are taken from the current context (the object passed to the template compiler).
+Element attributes can have values be inserted during the templating process. Paramater values are taken from the current context (the object passed to the template compiler).
+
+For example, if an element is given `class='item-:id'`, the `:id` in the string will be replaced with the context's `id` property.
 
 ```javascript
-//context: {name: 'YSavir', id: 1}
-{{{ linkTo name 'users/:id' }}}
-//=> <a href='/users/1'>YSavir</a>
+//context: {name: 'YSavir', id: 1, memberType: 'premium'}
+{{{ linkTo name 'users/:id' class=':memberType-member' }}}
+//=> <a href='/users/1' class="premium-member">YSavir</a>
 ```
 
 ### Helpers
@@ -40,7 +42,7 @@ Inserts an anchor tag in place of the expression.
 ```javascript
 {{{linkTo body path [attributes]}}}
 ```
-Any parameters passed will be interpolated into the path string.
+The path string can accept parameters.
 
 ```javascript
 // Context: {name: 'YSavir', id: 1}
@@ -56,7 +58,7 @@ Any parameters passed will be interpolated into the path string.
 ```
 
 #### textFieldTag
-Inserts a text input tag. Parameters can be inserted into the `placeholder` and `value` attributes.
+Inserts a text input tag.
 
 ```javascript
 //context {username: 'Joe'}
