@@ -72,6 +72,39 @@ Inserts a text input tag.
 {{{ textFieldTag value=":username" placeholder="Username... Currently :username" }}}
 //=> <input type="text" value="Joe" placeholder="Username... Currently Joe">
 ```
+
+#### textArea
+Inserts a text area tag.
+
+```javascript
+//context {username: YSavir}
+
+{{{ textArea }}}
+//=> <textarea></textarea>
+
+{{{ textArea name="a-text-area" id=":username's-story" }}}
+//=> <textarea name="a-text-area" id="YSavir's-story }}}
+
+{{{ textArea placeholder="Enter story here" value="story of :username" }}}
+//=> <textarea placeholder="Enter story here">story of YSavir</textarea>
+```
+
+### emailTag
+Insterts an email input tag.
+
+```javascript
+//context {email: 'testemail@example.com'}
+
+{{{ emailTag }}}
+//=> <input type="email">
+
+{{{ emailTag name="testEmail" id="test-email-id" }}}
+//=> <input type="email" id="test-email-id" name="testEmail">
+
+{{{ emailTag value=":email" }}}
+//=> <input type="email" value="testemail@example.com">
+```
+
 ## Compatibility
 
 Grips is compatibile with:
