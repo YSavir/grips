@@ -105,6 +105,23 @@ Insterts an email input tag.
 //=> <input type="email" value="testemail@example.com">
 ```
 
+#### hiddenTag
+Inserts a hidden input tag.
+
+```javascript
+// context {type: 'premium'}
+
+{{{ hiddenTag }}}
+//=> <input type="hidden">
+
+{{{ hiddenTag name="username" }}}
+//=> <input type="hidden" name="username">
+
+{{{ hiddenTag value=":type" }}}
+//=> <input type="hidden" value="premium">
+
+```
+
 ## Compatibility
 
 Grips is compatibile with:
